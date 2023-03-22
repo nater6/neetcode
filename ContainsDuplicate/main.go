@@ -1,12 +1,13 @@
 package main
 
+import "sort"
+
 func containsDuplicate(nums []int) bool {
-	// Nested Array loop
+	// Nested Slice loop
+	sort.Ints(nums)
 	for i, x := range nums {
-		for j, y := range nums {
-			if i != j && x == y {
-				return true
-			}
+		if i > 0 && nums[i-1] == x {
+			return true
 		}
 	}
 	return false
