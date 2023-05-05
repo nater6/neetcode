@@ -17,8 +17,8 @@ func TestTwoSum(t *testing.T) {
 	}
 
 	for _, test := range testCases {
-		if reflect.DeepEqual(test.expected, test.result) {
-			t.Errorf("Expected != Result: ", test)
+		if !reflect.DeepEqual(test.expected, test.result) {
+			t.Errorf("Expected != Result: %v", test)
 		}
 	} 
 	
